@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #canvas1, #canvas2 {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #canvas2 {
+            background-color: #fff;
+        }
+        #box {
+            position: relative;
+            width: 683px;
+            height: 384px;
+            margin-bottom: 10px;
+        }
+        #pattle {
+            display: flex;
+            flex-direction: column;
+        }
+        #color_select {
+            display: flex;
+            align-items: center;
+        }
+        .color_btn_list {
+            display: flex;
+        }
+        .color_btn, .current_colors, .color_selection {
+            border-top: 1px solid #7B7B7B;
+            border-left: 1px solid #7B7B7B;
+            border-right: 1px solid #BBBBBB;
+            border-bottom: 1px solid #BBBBBB;
+        }
+        .color_btn, .color_selection {
+            width: 13px;
+            height: 13px;
+        }
+        .current_colors {
+            position: relative;
+            width: 30px;
+	        height: 31px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACAQMAAABIeJ9nAAAABlBMVEW9vb3///8EwsWUAAAADElEQVQI12NoYHAAAAHEAMFJRSpJAAAAAElFTkSuQmCC) repeat;
+        }
+        .paint {
+            width: 1137px;
+            padding-left: 3px;
+            margin: auto;
+            background: #c0c0c0;
+        }
+        .canvas-area {
+            position: relative;
+            width: 100%;
+            height: 567px;
+            background-color: #7b7b7b;
+            overflow: auto;
+        }
+        #select {
+            display: flex;
+            flex-wrap: wrap;
+            width: 50px;
+            height: 168px;
+        }
+        .func {
+            width: 24px;
+            height: 24px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            background: transparent;
+            outline: 0;
+        }
+        .func.selected {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACAQMAAABIeJ9nAAAABlBMVEW9vb3///8EwsWUAAAADElEQVQI12NoYHAAAAHEAMFJRSpJAAAAAElFTkSuQmCC) repeat;
+        }
+        .func_inside {
+            width: 100%;
+            height: 100%;
+            background-image: url(images/toolbar-icons.png);
+            border-top: 1px solid white;
+            border-left: 1px solid white;
+            border-right: 1px solid #7b7b7b;
+            border-bottom: 1px solid #7b7b7b;
+        }
+        .draw {
+            display: flex;
+            height: 567px;
+        }
+        .tool-options {
+            border: 1px solid white;
+            border-top-color: #7b7b7b;
+            border-left-color: #7b7b7b;
+            margin: 10px auto 0 auto;
+            width: 41px;
+            height: 66px;
+            box-sizing: border-box;
+        }
+        .tool-option {
+        }
+        .tool-option.selected {
+            background-color: rgb(0, 0, 123);
+        }
+        .choose-brush, .choose-airbrush-size {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-content: space-around;
+        }
+        .choose-enlarge {
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .invert {
+            filter: invert(100%);
+        }
+        .meus {
+            display: flex;
+            align-items: center;
+            height: 19px;
+        }
+        .color_select_wrap {
+            height: 47px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="./classic.css">
+</head>
+<body>
+    <div id="about-paint" style="text-align:center;margin-left: 9%;margin-right: 9%;">
+        <h1>
+            <img src="./images/icons/32.png">
+            Paint
+        </h1>
+    </div>
+    <div class="paint">
+        <div class="meus">
+            <div class="menu-popup">File</div>
+            <div class="menu-popup">Edit</div>
+            <div class="menu-popup">View</div>
+            <div class="menu-popup">Colors</div>
+            <div class="menu-popup">Help</div>
+        </div>
+        <div class="draw">
+            <div class="tool-cantainer">
+                <div id="select">
+                </div>
+                <div class="tool-options">
+                </div>
+            </div>
+            <div class="canvas-area">
+                <canvas id="canvas2" width="683" height="384"></canvas>
+                <canvas id="canvas1" width="683" height="384"></canvas>
+            </div>
+        </div>
+        <div class="color_select_wrap">
+            <div id="color_select">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./global.js"></script>
+<script src="./utils.js"></script>
+<script src="./options.js"></script>
+<script src="./color.js"></script>
+<script src="./line.js"></script>
+<script src="./pen.js"></script>
+<script src="./reactangle.js"></script>
+<script src="./text.js"></script>
+<script src="./crop.js"></script>
+<script src="./enlarge.js"></script>
+<script src="./curve.js"></script>
+<script src="./polygon.js"></script>
+<script src="./circle.js"></script>
+<script src="./circleReactangle.js"></script>
+<script src="./spray.js"></script>
+<script src="./rubber.js"></script>
+<script src="./brush.js"></script>
+<script src="./fill.js"></script>
+<script src="./main.js"></script>
+<script>
+</script>
+</html>
